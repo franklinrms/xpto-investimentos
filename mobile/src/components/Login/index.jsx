@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import {
   TextInput, TouchableOpacity, View, Text,
 } from 'react-native';
-import theme from '../../theme';
 
+import theme from '../../theme';
+import validateLogin from '../../utils/validateLogin';
 import styles from './styles';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(true);
 
   return (
     <View style={styles.container}>
@@ -29,8 +29,8 @@ function Login() {
         onChangeText={setPassword}
       />
       <TouchableOpacity
-        disabled={isLoginButtonDisabled}
-        style={isLoginButtonDisabled ? styles.buttonDisabled : styles.button}
+        disabled={validateLogin(email, password)}
+        style={validateLogin(email, password) ? styles.buttonDisabled : styles.button}
       >
         <Text style={styles.buttonTitle}>Acessar</Text>
       </TouchableOpacity>
