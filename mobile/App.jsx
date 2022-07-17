@@ -11,6 +11,7 @@ import {
 } from '@expo-google-fonts/inter';
 
 import theme from './src/theme';
+import Login from './src/components/Login';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,8 +34,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#fff' }}>XPTO Investimentos</Text>
-
+      <Text style={{ color: theme.colors.brand }}>XPTO Investimentos</Text>
+      <Login />
       <StatusBar style={styles.theme} backgroundColor="transparent" translucent />
     </View>
   );

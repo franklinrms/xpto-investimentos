@@ -1,7 +1,10 @@
 const theme = {
   colors: {
-    brand: '#8257E5',
+    brand: '#00DAF7',
     background: '#09090A',
+
+    buy: '#99FA3E',
+    sell: '#FA413E',
 
     surface_primary: '#18181B',
     surface_secondary: '#27272A',
