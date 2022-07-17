@@ -3,11 +3,14 @@ import theme from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
-    width: '85%',
+    height: '100%',
+    backgroundColor: theme.colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   input: {
     height: 60,
-    width: '100%',
+    width: '85%',
     padding: 12,
     marginBottom: 15,
     borderRadius: 8,
@@ -18,7 +21,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 60,
-    width: '100%',
+    width: '85%',
     backgroundColor: theme.colors.brand,
     alignItems: 'center',
     justifyContent: 'center',
@@ -27,7 +30,7 @@ const styles = StyleSheet.create({
   buttonDisabled: {
     opacity: 0.7,
     height: 60,
-    width: '100%',
+    width: '85%',
     backgroundColor: theme.colors.brand,
     alignItems: 'center',
     justifyContent: 'center',
