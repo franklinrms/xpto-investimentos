@@ -17,8 +17,8 @@ const theme = {
   },
 
   fonts: {
-    regular: 'Inter_400Regular',
-    medium: 'Inter_500Medium',
+    regular: 'interRegular',
+    medium: 'interMedium',
   },
 };
 

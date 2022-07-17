@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.colors.stroke,
     color: theme.colors.text_primary,
+    fontFamily: theme.fonts.regular,
   },
   button: {
     height: 60,
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: theme.colors.text_primary,
     fontWeight: 'bold',
+    fontFamily: theme.fonts.medium,
   },
 });
 
