@@ -12,6 +12,7 @@ import {
 
 import theme from './src/theme';
 import Login from './src/components/Login';
+import UserProvider from './src/context/UserProvider';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,9 +35,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{ color: theme.colors.brand }}>XPTO Investimentos</Text>
-      <Login />
       <StatusBar style={styles.theme} backgroundColor="transparent" translucent />
+      <UserProvider>
+        <Text style={{ color: theme.colors.brand }}>XPTO Investimentos</Text>
+        <Login />
+      </UserProvider>
     </View>
   );
 }
