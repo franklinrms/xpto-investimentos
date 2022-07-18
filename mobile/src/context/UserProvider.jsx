@@ -6,12 +6,12 @@ export default function UserProvider({ children }) {
 //   const [userId, setUserId] = useState('');
   const [balance, setBalance] = useState(100.00);
   const [allStocks, setAllStocks] = useState([{
-    stocksId: 'ABEV3',
+    stockId: 'ABEV3',
     name: 'Ambev SA',
     price: 14.59,
   }]);
   const [myStocks, setMyStocks] = useState([{
-    stocksId: 'ABEV3',
+    stockId: 'ABEV3',
     name: 'Ambev SA',
     price: 14.59,
   }]);

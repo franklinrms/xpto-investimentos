@@ -6,6 +6,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    // flexDirection: 'row',
+    // flexWrap: 'wrap',
   },
   button: {
     height: 60,
