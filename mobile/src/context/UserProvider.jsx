@@ -4,7 +4,7 @@ import UserContext from './UserContext';
 
 export default function UserProvider({ children }) {
 //   const [userId, setUserId] = useState('');
-  const [balance, setBalance] = useState(100.00);
+  const [balance, setBalance] = useState(7100.19);
   const [allStocks, setAllStocks] = useState([{
     stockId: 'ABEV3',
     name: 'Ambev SA',
