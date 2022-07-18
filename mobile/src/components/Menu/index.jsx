@@ -11,7 +11,7 @@ export default function Menu() {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('Wallet')}
       >
         <Wallet size={36} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
