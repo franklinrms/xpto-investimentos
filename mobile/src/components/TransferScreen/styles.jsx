@@ -22,9 +22,12 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.medium,
   },
   title: {
+    marginTop: 30,
+    width: '85%',
     fontSize: 14,
     color: theme.colors.text_primary,
     fontFamily: theme.fonts.medium,
+    textAlign: 'left',
   },
   input: {
     width: '85%',
@@ -34,6 +37,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.medium,
     fontSize: 24,
     fontWeight: 'bold',
+    marginBottom: 30,
   },
 });
 export default styles;

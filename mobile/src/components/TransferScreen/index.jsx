@@ -27,7 +27,7 @@ export default function TransferScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tipo</Text>
+      <Text style={styles.title}>Selecione a forma de transferência:</Text>
       <FlatList
         horizontal
         data={transferType}
@@ -35,6 +35,7 @@ export default function TransferScreen() {
         keyExtractor={(item) => item.id}
         extraData={selectedId}
       />
+      <Text style={styles.title}>Quanto você quer transferir?</Text>
       <TextInput
         style={styles.input}
         placeholder="0.00"
