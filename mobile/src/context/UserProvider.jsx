@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import UserContext from './UserContext';
 
@@ -16,6 +16,8 @@ export default function UserProvider({ children }) {
     price: 14.59,
   }]);
 
+  const bottomSheetRef = useRef(null);
+
   const contextValue = useMemo(() => ({
     allStocks,
     setAllStocks,
@@ -23,7 +25,8 @@ export default function UserProvider({ children }) {
     setMyStocks,
     balance,
     setBalance,
-  }), [myStocks, balance]);
+    bottomSheetRef,
+  }), [myStocks, balance, bottomSheetRef]);
 
   return (
     <UserContext.Provider value={contextValue}>

@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -6,15 +8,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  checkboxContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
+  modal: {
+    backgroundColor: theme.colors.surface_primary,
+    paddingBottom: getBottomSpace() + 16,
+    // zIndex: -100,
   },
-  checkbox: {
-    alignSelf: 'center',
-  },
-  label: {
-    margin: 8,
+  indicator: {
+    backgroundColor: theme.colors.text_primary,
+    padding: 0,
   },
 });
 export default styles;
