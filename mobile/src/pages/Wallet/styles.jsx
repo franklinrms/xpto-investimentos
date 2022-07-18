@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
   modal: {
     backgroundColor: theme.colors.surface_primary,
     paddingBottom: getBottomSpace() + 16,
-    // zIndex: -100,
   },
   indicator: {
     backgroundColor: theme.colors.text_primary,
-    padding: 0,
+    padding: 2,
+    marginTop: 4,
   },
 });
 export default styles;

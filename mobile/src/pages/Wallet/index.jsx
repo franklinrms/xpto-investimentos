@@ -7,6 +7,7 @@ import Balance from '../../components/Balance';
 import Menu from '../../components/Menu';
 import styles from './styles';
 import UserContext from '../../context/UserContext';
+import TransferScreen from '../../components/TransferScreen';
 
 function Wallet() {
   const { bottomSheetRef } = useContext(UserContext);
@@ -19,7 +20,9 @@ function Wallet() {
         snapPoints={[1, 550]}
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
-      />
+      >
+        <TransferScreen />
+      </BottomSheet>
     </View>
   );
 }
