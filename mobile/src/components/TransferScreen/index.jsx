@@ -4,14 +4,19 @@ import {
 } from 'react-native';
 import theme from '../../theme';
 import transferType from '../../utils/transferType';
+import validateTransfer from '../../utils/validateTransfer';
 import TransferOption from '../TransferOption';
 
 import styles from './styles';
 
 export default function TransferScreen() {
-  const [value, setValue] = useState(0);
+  const [inputValue, setInputValue] = useState(0);
   const [selectedId, setSelectedId] = useState(null);
 
+  const handleChange = (e) => {
+    const value = Number(e).toFixed(2);
+    setInputValue(value);
+  };
   const renderItem = ({ item }) => {
     const color = item.id === selectedId ? theme.colors.brand : theme.colors.text_secondary;
     const borderColor = item.id === selectedId ? theme.colors.brand : theme.colors.surface_primary;
@@ -41,9 +46,12 @@ export default function TransferScreen() {
         placeholder="0.00"
         placeholderTextColor={theme.colors.brand}
         keyboardType="number-pad"
-        onChangeText={setValue}
+        onChangeText={handleChange}
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => console.log(validateTransfer(selectedId, 1000, inputValue))}
+      >
         <Text style={styles.buttonTitle}>Transferir</Text>
       </TouchableOpacity>
     </View>
