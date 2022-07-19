@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 import { CaretRight } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import theme from '../../theme';
 
 export default function StockLarge({ name, stockId, price }) {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('StockDetails', {
+        back: 'AllStocks',
+        name,
+        stockId,
+        price,
+      })}
+      style={styles.container}
+    >
       <View style={styles.containerCompany}>
         <View>
           <Text style={styles.id}>{stockId}</Text>

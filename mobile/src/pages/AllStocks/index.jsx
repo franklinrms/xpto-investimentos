@@ -1,6 +1,5 @@
 import React from 'react';
 import { View } from 'react-native';
-import GoBack from '../../components/GoBack';
 import Menu from '../../components/Menu';
 import StockLarge from '../../components/StockLarge';
 
@@ -13,7 +12,6 @@ export default function AllStocks() {
       <StockLarge name="Petrobras" stockId="PETR4" price={27.96} />
       <StockLarge name="Petrobras" stockId="PETR4" price={27.96} />
       <StockLarge name="Petrobras" stockId="PETR4" price={27.96} />
-      <GoBack rota="Wallet" />
     </View>
   );
 }

@@ -7,12 +7,12 @@ import theme from '../../theme';
 
 import styles from './styles';
 
-export default function GoBack({ rota }) {
+export default function GoBack({ route }) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => navigation.navigate(rota)}
+      onPress={() => navigation.navigate(route)}
     >
       <ArrowLeft size={24} color={theme.colors.text_secondary} weight="bold" />
       <Text style={styles.label}>Voltar</Text>
@@ -20,5 +20,5 @@ export default function GoBack({ rota }) {
   );
 }
 GoBack.propTypes = {
-  rota: PropTypes.string,
+  route: PropTypes.string,
 }.isRequired;
