@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
-  Text, View, TouchableOpacity, TextInput, FlatList,
+  Text, View, TouchableOpacity, TextInput, FlatList, Alert,
 } from 'react-native';
+import UserContext from '../../context/UserContext';
 import theme from '../../theme';
+import newTransfer from '../../utils/newTransfer';
 import transferType from '../../utils/transferType';
 import validateTransfer from '../../utils/validateTransfer';
 import TransferOption from '../TransferOption';
@@ -11,11 +13,20 @@ import styles from './styles';
 
 export default function TransferScreen() {
   const [inputValue, setInputValue] = useState(0);
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState('deposit');
+  const { balance, balanceUpdate } = useContext(UserContext);
 
   const handleChange = (e) => {
     const value = Number(e).toFixed(2);
     setInputValue(value);
+  };
+
+  const sendTransfer = () => {
+    if (validateTransfer(selectedId, balance, inputValue)) {
+      balanceUpdate(newTransfer(selectedId, balance, inputValue));
+    } else {
+      Alert.alert('Falha', 'valor inválido ou saldo insuficiente');
+    }
   };
   const renderItem = ({ item }) => {
     const color = item.id === selectedId ? theme.colors.brand : theme.colors.text_secondary;
@@ -50,7 +61,7 @@ export default function TransferScreen() {
       />
       <TouchableOpacity
         style={styles.button}
-        onPress={() => console.log(validateTransfer(selectedId, 1000, inputValue))}
+        onPress={sendTransfer}
       >
         <Text style={styles.buttonTitle}>Transferir</Text>
       </TouchableOpacity>

@@ -1,5 +1,5 @@
 const validateWithdraw = (balance, value) => {
-  if (balance < value) return false;
+  if (Number(balance) < Number(value)) return false;
   return true;
 };
 

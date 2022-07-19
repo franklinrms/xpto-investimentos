@@ -16,6 +16,11 @@ export default function UserProvider({ children }) {
     price: 14.59,
   }]);
 
+  const balanceUpdate = (value) => {
+    const result = Number(value).toFixed(2);
+    setBalance(result);
+  };
+
   const bottomSheetRef = useRef(null);
 
   const contextValue = useMemo(() => ({
@@ -24,7 +29,7 @@ export default function UserProvider({ children }) {
     myStocks,
     setMyStocks,
     balance,
-    setBalance,
+    balanceUpdate,
     bottomSheetRef,
   }), [myStocks, balance, bottomSheetRef]);
 
