@@ -9,12 +9,14 @@ import styles from './styles';
 import UserContext from '../../context/UserContext';
 import TransferScreen from '../../components/TransferScreen';
 import SuccessScreen from '../../components/SuccessScreen';
+import MyStocks from '../../components/MyStocks';
 
 function Wallet() {
   const { bottomSheetRef, transferSent } = useContext(UserContext);
   return (
     <View style={styles.container}>
       <Balance />
+      <MyStocks />
       <Menu />
       <BottomSheet
         ref={bottomSheetRef}

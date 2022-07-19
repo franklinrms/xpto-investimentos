@@ -15,6 +15,10 @@ export default function UserProvider({ children }) {
     stockId: 'ABEV3',
     name: 'Ambev SA',
     price: 14.59,
+  }, {
+    stockId: 'PETR4',
+    name: 'Petrobras',
+    price: 27.96,
   }]);
 
   const balanceUpdate = (value) => {
