@@ -14,7 +14,7 @@ import styles from './styles';
 export default function TransferScreen() {
   const [inputValue, setInputValue] = useState(0);
   const [selectedId, setSelectedId] = useState('deposit');
-  const { balance, balanceUpdate } = useContext(UserContext);
+  const { balance, balanceUpdate, setTransferSent } = useContext(UserContext);
 
   const handleChange = (e) => {
     const value = Number(e).toFixed(2);
@@ -24,6 +24,7 @@ export default function TransferScreen() {
   const sendTransfer = () => {
     if (validateTransfer(selectedId, balance, inputValue)) {
       balanceUpdate(newTransfer(selectedId, balance, inputValue));
+      setTransferSent(true);
     } else {
       Alert.alert('Falha', 'valor inválido ou saldo insuficiente');
     }

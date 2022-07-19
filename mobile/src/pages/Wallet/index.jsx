@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
@@ -8,9 +8,10 @@ import Menu from '../../components/Menu';
 import styles from './styles';
 import UserContext from '../../context/UserContext';
 import TransferScreen from '../../components/TransferScreen';
+import SuccessScreen from '../../components/SuccessScreen';
 
 function Wallet() {
-  const { bottomSheetRef } = useContext(UserContext);
+  const { bottomSheetRef, transferSent } = useContext(UserContext);
   return (
     <View style={styles.container}>
       <Balance />
@@ -21,7 +22,13 @@ function Wallet() {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <TransferScreen />
+        {
+          transferSent ? (
+            <SuccessScreen />
+          ) : (
+            <TransferScreen />
+          )
+        }
       </BottomSheet>
     </View>
   );

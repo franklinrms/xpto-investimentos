@@ -5,6 +5,7 @@ import UserContext from './UserContext';
 export default function UserProvider({ children }) {
 //   const [userId, setUserId] = useState('');
   const [balance, setBalance] = useState(7100.19);
+  const [transferSent, setTransferSent] = useState(false);
   const [allStocks, setAllStocks] = useState([{
     stockId: 'ABEV3',
     name: 'Ambev SA',
@@ -31,7 +32,9 @@ export default function UserProvider({ children }) {
     balance,
     balanceUpdate,
     bottomSheetRef,
-  }), [myStocks, balance, bottomSheetRef]);
+    transferSent,
+    setTransferSent,
+  }), [myStocks, balance, bottomSheetRef, transferSent]);
 
   return (
     <UserContext.Provider value={contextValue}>

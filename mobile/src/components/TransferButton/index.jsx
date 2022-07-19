@@ -7,11 +7,15 @@ import theme from '../../theme';
 import UserContext from '../../context/UserContext';
 
 export default function TransferButton() {
-  const { bottomSheetRef } = useContext(UserContext);
+  const { bottomSheetRef, setTransferSent } = useContext(UserContext);
+  const enableTransfer = () => {
+    setTransferSent(false);
+    bottomSheetRef.current?.expand();
+  };
   return (
     <TouchableOpacity
       style={styles.button}
-      onPress={() => bottomSheetRef.current?.expand()}
+      onPress={enableTransfer}
     >
       <ArrowsLeftRight
         size={18}
