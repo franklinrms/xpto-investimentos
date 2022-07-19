@@ -29,15 +29,28 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.medium,
     textAlign: 'left',
   },
-  input: {
+  inputValue: {
+    alignItems: 'center',
     width: '85%',
+    height: 80,
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+  },
+  input: {
+    width: '50%',
     padding: 12,
-    borderColor: theme.colors.stroke,
     color: theme.colors.brand,
     fontFamily: theme.fonts.medium,
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 30,
+    // marginBottom: 30,
+  },
+  value: {
+    // padding: 12,
+    color: theme.colors.brand,
+    fontFamily: theme.fonts.medium,
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
 export default styles;

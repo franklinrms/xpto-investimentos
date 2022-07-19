@@ -53,13 +53,16 @@ export default function TransferScreen() {
         extraData={selectedId}
       />
       <Text style={styles.title}>Quanto você quer transferir?</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="0.00"
-        placeholderTextColor={theme.colors.brand}
-        keyboardType="number-pad"
-        onChangeText={handleChange}
-      />
+      <View style={styles.inputValue}>
+        <Text style={styles.value}>R$</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="0.00"
+          placeholderTextColor={theme.colors.brand}
+          keyboardType="number-pad"
+          onChangeText={handleChange}
+        />
+      </View>
       <TouchableOpacity
         style={styles.button}
         onPress={sendTransfer}
