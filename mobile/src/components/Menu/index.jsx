@@ -16,7 +16,7 @@ export default function Menu() {
         <Wallet size={36} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('AllStocks')}
       >
         <TrendUp size={36} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
