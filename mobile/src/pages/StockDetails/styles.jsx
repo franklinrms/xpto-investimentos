@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   containerCompany: {
-    top: 100,
+    marginTop: 100,
     width: '85%',
     alignItems: 'center',
     justifyContent: 'space-between',

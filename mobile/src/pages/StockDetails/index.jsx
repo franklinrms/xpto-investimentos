@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles';
 import GoBack from '../../components/GoBack';
+import TradeButton from '../../components/TradeButton';
 
 export default function StockDetails({ route }) {
   const {
@@ -19,6 +20,7 @@ export default function StockDetails({ route }) {
         <Text style={styles.label}>{`R$ ${price}`}</Text>
       </View>
       {/* <Text>###### Gráfico #######</Text> */}
+      <TradeButton />
       <GoBack route={back} />
     </View>
   );
