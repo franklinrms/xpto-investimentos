@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import UserContext from './UserContext';
 
 export default function UserProvider({ children }) {
-//   const [userId, setUserId] = useState('');
+  const [user, setUser] = useState({
+    userId: '',
+    email: 'eu@eu.com',
+    name: 'Franklin',
+  });
   const [balance, setBalance] = useState(7100.19);
   const [transferSent, setTransferSent] = useState(false);
   const [allStocks, setAllStocks] = useState([{
@@ -38,7 +42,9 @@ export default function UserProvider({ children }) {
     bottomSheetRef,
     transferSent,
     setTransferSent,
-  }), [myStocks, balance, bottomSheetRef, transferSent]);
+    user,
+    setUser,
+  }), [myStocks, balance, bottomSheetRef, transferSent, user]);
 
   return (
     <UserContext.Provider value={contextValue}>

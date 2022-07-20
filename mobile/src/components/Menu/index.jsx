@@ -21,7 +21,7 @@ export default function Menu() {
         <TrendUp size={36} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('Profile')}
       >
         <User size={36} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
