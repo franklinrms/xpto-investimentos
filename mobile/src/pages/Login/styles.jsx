@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     width: '85%',
     padding: 12,
     marginBottom: 15,
-    borderRadius: 8,
+    borderRadius: 16,
     borderWidth: 1,
     borderColor: theme.colors.stroke,
     color: theme.colors.text_primary,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.brand,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 8,
+    borderRadius: 16,
   },
   buttonDisabled: {
     opacity: 0.7,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.brand,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 8,
+    borderRadius: 16,
   },
   buttonTitle: {
     fontSize: 14,

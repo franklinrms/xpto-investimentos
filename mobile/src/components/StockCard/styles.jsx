@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 8,
-    borderRadius: 8,
+    borderRadius: 16,
     backgroundColor: theme.colors.surface_primary,
     margin: 5,
   },
