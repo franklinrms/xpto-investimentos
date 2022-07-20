@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   containerCompany: {
     marginTop: 100,
+    marginBottom: 25,
     width: '85%',
     alignItems: 'center',
     justifyContent: 'space-between',

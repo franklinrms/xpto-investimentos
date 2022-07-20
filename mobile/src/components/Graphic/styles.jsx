@@ -13,8 +13,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     paddingHorizontal: 15,
-    // marginTop: -1,
-
   },
   title: {
     fontSize: 14,

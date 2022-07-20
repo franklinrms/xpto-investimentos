@@ -7,6 +7,7 @@ import theme from '../../theme';
 
 import styles from './styles';
 import priceHistoryType from '../../utils/priceHistoryType';
+import priceHistory from '../../utils/priceHistory';
 
 export default function Graphic() {
   const [selectedId, setSelectedId] = useState(0);
@@ -29,10 +30,10 @@ export default function Graphic() {
     <View style={styles.container}>
       <VictoryArea
         animate={{
-          duration: 2000,
+          duration: 1000,
           onLoad: { duration: 2000 },
         }}
-        width={550}
+        width={500}
         height={300}
         padding={10}
         style={{
@@ -43,14 +44,7 @@ export default function Graphic() {
             strokeWidth: 3,
           },
         }}
-        data={[
-          { x: 0, y: 2 },
-          { x: 1, y: 3 },
-          { x: 2, y: 15 },
-          { x: 3, y: 4 },
-          { x: 4, y: 6 },
-          { x: 5, y: 25 },
-        ]}
+        data={priceHistory[selectedId]}
       />
       <FlatList
         horizontal
