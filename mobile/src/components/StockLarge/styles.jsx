@@ -3,7 +3,7 @@ import theme from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
-    width: '90%',
+    width: '95%',
     height: 60,
     borderLeftWidth: 3,
     borderLeftColor: theme.colors.brand,
