@@ -1,23 +1,43 @@
 import React, { useContext, useState } from 'react';
 import {
-  Text, View, TouchableOpacity, TextInput, FlatList,
+  Text, View, TouchableOpacity, TextInput, FlatList, Alert,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import UserContext from '../../context/UserContext';
 import theme from '../../theme';
 import tradeType from '../../utils/tradeType';
+import validateTrade from '../../utils/validateTrade';
 import TransferOption from '../TransferOption';
 
 import styles from './styles';
 
-export default function TradeScreen({ stockId, price }) {
-  const [inputValue, setInputValue] = useState(0);
+export default function TradeScreen({ stockId, price, amountOwned }) {
+  const [inputAmount, setInputAmount] = useState(0);
+  const [orderTotal, setOrderTotal] = useState(0);
   const [selectedId, setSelectedId] = useState(null);
-  const { balance, balanceUpdate } = useContext(UserContext);
+  const { balance, balanceUpdate, setTransferSent } = useContext(UserContext);
   const backgroundColor = selectedId === 'Vender' ? theme.colors.sell : theme.colors.brand;
 
-  const handleChange = (e) => {
-    const value = Number(e).toFixed(2);
-    setInputValue(value);
+  const handleChange = (input) => {
+    const value = Number(input);
+    const total = Number(value * price).toFixed(2);
+    setInputAmount(value);
+    setOrderTotal(total);
+  };
+  const newTrade = () => {
+    if (selectedId === 'Comprar') {
+      return Number(balance) - Number(orderTotal);
+    }
+    return Number(balance) + Number(orderTotal);
+  };
+
+  const sendOrder = () => {
+    if (validateTrade(selectedId, balance, orderTotal, inputAmount)) {
+      balanceUpdate(newTrade().toFixed(2));
+      setTransferSent(true);
+    } else {
+      Alert.alert('Falha', 'valor inválido ou saldo insuficiente');
+    }
   };
 
   const renderItem = ({ item }) => {
@@ -56,13 +76,13 @@ export default function TradeScreen({ stockId, price }) {
         onChangeText={handleChange}
       />
       <Text style={styles.details}>{`Saldo disponível: R$ ${balance}`}</Text>
-      <Text style={styles.details}>{`Ações possuídas: ${0}`}</Text>
-      <Text style={styles.total}>{`Valor total da ordem: R$ ${1000.05}`}</Text>
+      <Text style={styles.details}>{`Ações possuídas: ${amountOwned || 0}`}</Text>
+      <Text style={styles.total}>{`Valor total da ordem: R$ ${Number(orderTotal).toFixed(2)}`}</Text>
       {
         selectedId && (
           <TouchableOpacity
             style={[styles.button, { backgroundColor }]}
-          // onPress={}
+            onPress={sendOrder}
           >
             <Text style={styles.buttonTitle}>{selectedId}</Text>
           </TouchableOpacity>
@@ -71,3 +91,8 @@ export default function TradeScreen({ stockId, price }) {
     </View>
   );
 }
+TradeScreen.propTypes = {
+  amountOwned: PropTypes.number,
+  stockId: PropTypes.string,
+  price: PropTypes.number,
+}.isRequired;

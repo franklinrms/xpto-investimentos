@@ -5,9 +5,9 @@ import styles from './styles';
 import UserContext from '../../context/UserContext';
 
 export default function TradeButton() {
-  const { bottomSheetRef } = useContext(UserContext);
+  const { bottomSheetRef, setTransferSent } = useContext(UserContext);
   const enableTrade = () => {
-    // setTransferSent(false);
+    setTransferSent(false);
     bottomSheetRef.current?.expand();
   };
   return (

@@ -10,11 +10,12 @@ import TradeButton from '../../components/TradeButton';
 import UserContext from '../../context/UserContext';
 import TradeScreen from '../../components/TradeScreen';
 import Graphic from '../../components/Graphic';
+import SuccessScreen from '../../components/SuccessScreen';
 
 function StockDetails({ route }) {
-  const { bottomSheetRef } = useContext(UserContext);
+  const { bottomSheetRef, transferSent } = useContext(UserContext);
   const {
-    back, name, stockId, price,
+    back, name, stockId, price, amountOwned,
   } = route.params;
   return (
     <View style={styles.container}>
@@ -37,8 +38,13 @@ function StockDetails({ route }) {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <TradeScreen stockId={stockId} price={price} />
-        {/* <SuccessScreen /> */}
+        {
+          transferSent ? (
+            <SuccessScreen />
+          ) : (
+            <TradeScreen stockId={stockId} price={price} amountOwned={amountOwned} />
+          )
+        }
       </BottomSheet>
     </View>
   );
