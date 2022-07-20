@@ -9,6 +9,7 @@ import GoBack from '../../components/GoBack';
 import TradeButton from '../../components/TradeButton';
 import UserContext from '../../context/UserContext';
 import TradeScreen from '../../components/TradeScreen';
+import Graphic from '../../components/Graphic';
 
 function StockDetails({ route }) {
   const { bottomSheetRef } = useContext(UserContext);
@@ -25,8 +26,7 @@ function StockDetails({ route }) {
         <Text style={styles.label}>{`R$ ${price}`}</Text>
       </View>
 
-      {/* <Text>###### Gráfico #######</Text> */}
-      {/* <Text>###### Gráfico #######</Text> */}
+      <Graphic />
 
       <TradeButton />
 
