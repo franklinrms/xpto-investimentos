@@ -12,18 +12,21 @@ export default function Menu() {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate('Wallet')}
+        style={styles.button}
       >
-        <Wallet size={36} color={theme.colors.text_on_brand_color} weight="regular" />
+        <Wallet size={24} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
       <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('AllStocks')}
       >
-        <TrendUp size={36} color={theme.colors.text_on_brand_color} weight="regular" />
+        <TrendUp size={24} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
       <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('Profile')}
       >
-        <User size={36} color={theme.colors.text_on_brand_color} weight="regular" />
+        <User size={24} color={theme.colors.text_on_brand_color} weight="regular" />
       </TouchableOpacity>
     </View>
   );
