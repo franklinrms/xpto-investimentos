@@ -8,6 +8,7 @@ import styles from './styles';
 import GoBack from '../../components/GoBack';
 import TradeButton from '../../components/TradeButton';
 import UserContext from '../../context/UserContext';
+import TradeScreen from '../../components/TradeScreen';
 
 function StockDetails({ route }) {
   const { bottomSheetRef } = useContext(UserContext);
@@ -29,15 +30,16 @@ function StockDetails({ route }) {
 
       <TradeButton />
 
+      <GoBack route={back} />
       <BottomSheet
         ref={bottomSheetRef}
         snapPoints={[1, 650]}
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
+        <TradeScreen stockId={stockId} price={price} />
         {/* <SuccessScreen /> */}
       </BottomSheet>
-      <GoBack route={back} />
     </View>
   );
 }
