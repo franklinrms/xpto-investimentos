@@ -1,4 +1,4 @@
-const priceHistory = [
+const PRICE_HISTORY_DATA = [
   [{ x: 20, y: 25 },
     { x: 21, y: 24 },
     { x: 22, y: 35 },
@@ -52,4 +52,4 @@ const priceHistory = [
     { x: 23, y: 25 },
     { x: 24, y: 27 }],
 ];
-export default priceHistory;
+export default PRICE_HISTORY_DATA;

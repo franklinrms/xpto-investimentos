@@ -7,7 +7,7 @@ import theme from '../../theme';
 
 import styles from './styles';
 import priceHistoryType from '../../utils/priceHistoryType';
-import priceHistory from '../../utils/priceHistory';
+import PRICE_HISTORY_DATA from '../../data/PRICE_HISTORY_DATA';
 
 export default function Graphic() {
   const [selectedId, setSelectedId] = useState(0);
@@ -44,7 +44,7 @@ export default function Graphic() {
             strokeWidth: 3,
           },
         }}
-        data={priceHistory[selectedId]}
+        data={PRICE_HISTORY_DATA[selectedId]}
       />
       <FlatList
         horizontal
