@@ -12,7 +12,7 @@ const validateAmount = (amount) => {
   return true;
 };
 const validateSell = (amount, amountOwned) => {
-  if (amount > amountOwned) return false;
+  if (amount > amountOwned || !amountOwned) return false;
   return true;
 };
 
