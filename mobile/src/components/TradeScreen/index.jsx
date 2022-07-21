@@ -31,11 +31,22 @@ export default function TradeScreen({
 
   const stockIndex = myStocks.findIndex((stock) => stock.stockId === stockId);
 
+  const newAmountOwned = () => {
+    const orderType = {
+      Comprar: amountOwned + inputAmount,
+      Vender: amountOwned - inputAmount,
+    };
+    if (amountOwned) {
+      return orderType[selectedId];
+    }
+    return inputAmount;
+  };
+
   const newAsset = {
     stockId,
     name,
     price,
-    amountOwned: amountOwned ? amountOwned + inputAmount : inputAmount,
+    amountOwned: newAmountOwned(),
   };
   const buy = () => {
     if (amountOwned) {
@@ -45,11 +56,20 @@ export default function TradeScreen({
     }
     setMyStocks(myStocks);
   };
+  const sell = () => {
+    if (amountOwned > inputAmount) {
+      myStocks.splice(stockIndex, 1, newAsset);
+    } else {
+      myStocks.splice(stockIndex, 1);
+    }
+    setMyStocks(myStocks);
+  };
   const newTrade = () => {
     if (selectedId === 'Comprar') {
       buy();
       return Number(balance) - Number(orderTotal);
     }
+    sell();
     return Number(balance) + Number(orderTotal);
   };
 
