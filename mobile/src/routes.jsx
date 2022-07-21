@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 function Routes() {
   return (
     <Stack.Navigator
-      initialRouteName="AllStocks"
+      initialRouteName="Wallet"
       screenOptions={{
         headerShown: false,
       }}

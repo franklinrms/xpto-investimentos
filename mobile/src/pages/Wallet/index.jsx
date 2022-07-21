@@ -12,14 +12,14 @@ import SuccessScreen from '../../components/SuccessScreen';
 import MyStocks from '../../components/MyStocks';
 
 function Wallet() {
-  const { bottomSheetRef, transferSent } = useContext(UserContext);
+  const { bottomTransferRef, transferSent } = useContext(UserContext);
   return (
     <View style={styles.container}>
       <Balance />
       <MyStocks />
       <Menu />
       <BottomSheet
-        ref={bottomSheetRef}
+        ref={bottomTransferRef}
         snapPoints={[1, 550]}
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}

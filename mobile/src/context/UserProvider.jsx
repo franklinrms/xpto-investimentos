@@ -33,6 +33,7 @@ export default function UserProvider({ children }) {
   };
 
   const bottomSheetRef = useRef(null);
+  const bottomTransferRef = useRef(null);
 
   const contextValue = useMemo(() => ({
     allStocks,
@@ -46,7 +47,8 @@ export default function UserProvider({ children }) {
     setTransferSent,
     user,
     setUser,
-  }), [myStocks, balance, bottomSheetRef, transferSent, user]);
+    bottomTransferRef,
+  }), [myStocks, balance, bottomSheetRef, bottomTransferRef, transferSent, user]);
 
   return (
     <UserContext.Provider value={contextValue}>
