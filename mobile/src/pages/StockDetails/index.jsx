@@ -45,7 +45,7 @@ function StockDetails({ route }) {
           transferSent ? (
             <SuccessScreen />
           ) : (
-            <TradeScreen stockId={stockId} price={price} amountOwned={amountOwned} />
+            <TradeScreen stockId={stockId} name={name} price={price} amountOwned={amountOwned} />
           )
         }
       </BottomSheet>

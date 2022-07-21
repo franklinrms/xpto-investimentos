@@ -11,11 +11,15 @@ import TransferOption from '../TransferOption';
 
 import styles from './styles';
 
-export default function TradeScreen({ stockId, price, amountOwned }) {
+export default function TradeScreen({
+  stockId, price, name, amountOwned,
+}) {
   const [inputAmount, setInputAmount] = useState(0);
   const [orderTotal, setOrderTotal] = useState(0);
   const [selectedId, setSelectedId] = useState(null);
-  const { balance, balanceUpdate, setTransferSent } = useContext(UserContext);
+  const {
+    balance, balanceUpdate, setTransferSent, myStocks, setMyStocks,
+  } = useContext(UserContext);
   const backgroundColor = selectedId === 'Vender' ? theme.colors.sell : theme.colors.brand;
 
   const handleChange = (input) => {
@@ -24,8 +28,26 @@ export default function TradeScreen({ stockId, price, amountOwned }) {
     setInputAmount(value);
     setOrderTotal(total);
   };
+
+  const stockIndex = myStocks.findIndex((stock) => stock.stockId === stockId);
+
+  const newAsset = {
+    stockId,
+    name,
+    price,
+    amountOwned: amountOwned ? amountOwned + inputAmount : inputAmount,
+  };
+  const buy = () => {
+    if (amountOwned) {
+      myStocks.splice(stockIndex, 1, newAsset);
+    } else {
+      myStocks.push(newAsset);
+    }
+    setMyStocks(myStocks);
+  };
   const newTrade = () => {
     if (selectedId === 'Comprar') {
+      buy();
       return Number(balance) - Number(orderTotal);
     }
     return Number(balance) + Number(orderTotal);
@@ -94,5 +116,6 @@ export default function TradeScreen({ stockId, price, amountOwned }) {
 TradeScreen.propTypes = {
   amountOwned: PropTypes.number,
   stockId: PropTypes.string,
+  name: PropTypes.string,
   price: PropTypes.number,
 }.isRequired;
