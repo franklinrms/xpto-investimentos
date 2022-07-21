@@ -42,6 +42,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: theme.fonts.medium,
   },
+  image: {
+    width: 280,
+    height: 100,
+    marginBottom: 35,
+  },
+  register: {
+    marginTop: 35,
+    fontSize: 14,
+    color: theme.colors.text_secondary,
+    fontWeight: 'bold',
+    fontFamily: theme.fonts.medium,
+  },
 });
 
 export default styles;
