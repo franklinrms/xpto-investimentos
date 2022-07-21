@@ -10,7 +10,7 @@ export default function Balance() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Saldo disponível</Text>
-      <Text style={styles.value}>{`R$ ${balance}`}</Text>
+      <Text style={styles.value}>{`R$ ${Number(balance).toFixed(2)}`}</Text>
       <TransferButton />
     </View>
   );

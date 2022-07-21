@@ -8,7 +8,7 @@ export default function UserProvider({ children }) {
     email: 'eu@eu.com',
     name: 'Franklin',
   });
-  const [balance, setBalance] = useState(7100.19);
+  const [balance, setBalance] = useState(0);
   const [transferSent, setTransferSent] = useState(false);
 
   const [myStocks, setMyStocks] = useState([]);
