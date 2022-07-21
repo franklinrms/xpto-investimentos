@@ -15,7 +15,7 @@ import SuccessScreen from '../../components/SuccessScreen';
 function StockDetails({ route }) {
   const { bottomSheetRef, transferSent } = useContext(UserContext);
   const {
-    back, name, stockId, price, amountOwned,
+    back, name, stockId, price,
   } = route.params;
   return (
     <View style={styles.container}>
@@ -42,7 +42,7 @@ function StockDetails({ route }) {
           transferSent ? (
             <SuccessScreen />
           ) : (
-            <TradeScreen stockId={stockId} price={price} amountOwned={amountOwned} />
+            <TradeScreen stockId={stockId} price={price} amountOwned={100} />
           )
         }
       </BottomSheet>

@@ -32,7 +32,7 @@ export default function TradeScreen({ stockId, price, amountOwned }) {
   };
 
   const sendOrder = () => {
-    if (validateTrade(selectedId, balance, orderTotal, inputAmount)) {
+    if (validateTrade(selectedId, balance, orderTotal, inputAmount, amountOwned)) {
       balanceUpdate(newTrade().toFixed(2));
       setTransferSent(true);
     } else {
