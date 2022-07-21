@@ -11,12 +11,7 @@ export default function UserProvider({ children }) {
   const [balance, setBalance] = useState(7100.19);
   const [transferSent, setTransferSent] = useState(false);
 
-  const [myStocks, setMyStocks] = useState([{
-    stockId: 'ABEV3',
-    name: 'Ambev SA',
-    price: 14.59,
-    amountOwned: 500,
-  }]);
+  const [myStocks, setMyStocks] = useState([]);
 
   const balanceUpdate = (value) => {
     const result = Number(value).toFixed(2);

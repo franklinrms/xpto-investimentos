@@ -10,13 +10,20 @@ import UserContext from '../../context/UserContext';
 import TransferScreen from '../../components/TransferScreen';
 import SuccessScreen from '../../components/SuccessScreen';
 import MyStocks from '../../components/MyStocks';
+import EmptyWallet from '../../components/EmptyWallet';
 
 function Wallet() {
-  const { bottomTransferRef, transferSent } = useContext(UserContext);
+  const { bottomTransferRef, transferSent, myStocks } = useContext(UserContext);
   return (
     <View style={styles.container}>
       <Balance />
-      <MyStocks />
+      {
+        myStocks.length ? (
+          <MyStocks />
+        ) : (
+          <EmptyWallet />
+        )
+      }
       <Menu />
       <BottomSheet
         ref={bottomTransferRef}
