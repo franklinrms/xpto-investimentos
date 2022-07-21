@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useContext } from 'react';
+import React from 'react';
 import { FlatList, Text, View } from 'react-native';
 import Menu from '../../components/Menu';
 import StockLarge from '../../components/StockLarge';
-import UserContext from '../../context/UserContext';
 
 import styles from './styles';
+import STOCKS_DATA from '../../data/STOCKS_DATA';
 
 export default function AllStocks() {
-  const { allStocks } = useContext(UserContext);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -21,7 +20,7 @@ export default function AllStocks() {
 
       <View style={styles.list}>
         <FlatList
-          data={allStocks}
+          data={STOCKS_DATA}
           renderItem={({ item }) => (
             <StockLarge {...item} />
           )}

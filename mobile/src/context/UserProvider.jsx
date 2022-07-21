@@ -10,17 +10,7 @@ export default function UserProvider({ children }) {
   });
   const [balance, setBalance] = useState(7100.19);
   const [transferSent, setTransferSent] = useState(false);
-  const [allStocks, setAllStocks] = useState([{
-    stockId: 'ABEV3',
-    name: 'Ambev SA',
-    price: 14.59,
-  },
-  {
-    stockId: 'PETR4',
-    name: 'Petrobras',
-    price: 27.96,
-    // amountOwned: 100,
-  }]);
+
   const [myStocks, setMyStocks] = useState([{
     stockId: 'ABEV3',
     name: 'Ambev SA',
@@ -37,8 +27,6 @@ export default function UserProvider({ children }) {
   const bottomTransferRef = useRef(null);
 
   const contextValue = useMemo(() => ({
-    allStocks,
-    setAllStocks,
     myStocks,
     setMyStocks,
     balance,
