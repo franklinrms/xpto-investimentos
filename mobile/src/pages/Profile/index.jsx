@@ -12,7 +12,9 @@ import styles from './styles';
 import logo from '../../assets/XPTO_03.png';
 
 export default function Profile() {
-  const { user, setUser } = useContext(UserContext);
+  const {
+    user, setUser, setMyStocks, balanceUpdate,
+  } = useContext(UserContext);
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
@@ -25,6 +27,8 @@ export default function Profile() {
         style={styles.button}
         onPress={() => {
           setUser({});
+          setMyStocks([]);
+          balanceUpdate(0);
           navigation.navigate('Login');
         }}
       >
