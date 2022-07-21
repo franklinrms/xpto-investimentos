@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 16,
     marginTop: 100,
+    marginBottom: 150,
     backgroundColor: theme.colors.sell,
   },
   buttonTitle: {
@@ -35,6 +36,11 @@ const styles = StyleSheet.create({
     color: theme.colors.text_primary,
     fontWeight: 'bold',
     fontFamily: theme.fonts.medium,
+  },
+  image: {
+    width: 180,
+    height: 80,
+    opacity: 0.3,
   },
 });
 export default styles;

@@ -1,12 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
 import { User } from 'phosphor-react-native';
 import React, { useContext } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image, Text, TouchableOpacity, View,
+} from 'react-native';
 import Menu from '../../components/Menu';
 import UserContext from '../../context/UserContext';
 import theme from '../../theme';
 
 import styles from './styles';
+import logo from '../../assets/XPTO_03.png';
 
 export default function Profile() {
   const { user, setUser } = useContext(UserContext);
@@ -27,6 +30,7 @@ export default function Profile() {
       >
         <Text style={styles.buttonTitle}>Sair</Text>
       </TouchableOpacity>
+      <Image source={logo} style={styles.image} />
       <Menu />
     </View>
   );
