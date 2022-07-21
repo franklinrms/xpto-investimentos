@@ -14,17 +14,18 @@ export default function UserProvider({ children }) {
     stockId: 'ABEV3',
     name: 'Ambev SA',
     price: 14.59,
+  },
+  {
+    stockId: 'PETR4',
+    name: 'Petrobras',
+    price: 27.96,
+    // amountOwned: 100,
   }]);
   const [myStocks, setMyStocks] = useState([{
     stockId: 'ABEV3',
     name: 'Ambev SA',
     price: 14.59,
     amountOwned: 500,
-  }, {
-    stockId: 'PETR4',
-    name: 'Petrobras',
-    price: 27.96,
-    amountOwned: 100,
   }]);
 
   const balanceUpdate = (value) => {

@@ -18,7 +18,7 @@ function StockDetails({ route }) {
     back, name, stockId, price,
   } = route.params;
 
-  const { amountOwned } = myStocks.find((stock) => stock.stockId === stockId);
+  const { amountOwned } = myStocks.find((stock) => stock.stockId === stockId) || 0;
 
   return (
     <View style={styles.container}>
