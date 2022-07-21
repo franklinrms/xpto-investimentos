@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
     top: 200,
   },
   title: {
-    margin: 20,
-    fontSize: 16,
+    margin: 25,
+    fontSize: 14,
     fontFamily: theme.fonts.medium,
     color: theme.colors.text_on_brand_color,
   },
