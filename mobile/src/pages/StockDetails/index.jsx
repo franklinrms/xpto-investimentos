@@ -13,10 +13,13 @@ import Graphic from '../../components/Graphic';
 import SuccessScreen from '../../components/SuccessScreen';
 
 function StockDetails({ route }) {
-  const { bottomSheetRef, transferSent } = useContext(UserContext);
+  const { bottomSheetRef, transferSent, myStocks } = useContext(UserContext);
   const {
     back, name, stockId, price,
   } = route.params;
+
+  const { amountOwned } = myStocks.find((stock) => stock.stockId === stockId);
+
   return (
     <View style={styles.container}>
       <View style={styles.containerCompany}>
@@ -42,7 +45,7 @@ function StockDetails({ route }) {
           transferSent ? (
             <SuccessScreen />
           ) : (
-            <TradeScreen stockId={stockId} price={price} amountOwned={100} />
+            <TradeScreen stockId={stockId} price={price} amountOwned={amountOwned} />
           )
         }
       </BottomSheet>
