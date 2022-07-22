@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   register: {
     marginBottom: 30,
-    fontSize: 14,
+    fontSize: 16,
     color: theme.colors.text_on_brand_color,
     fontFamily: theme.fonts.regular,
   },

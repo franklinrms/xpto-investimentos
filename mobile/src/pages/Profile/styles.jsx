@@ -37,10 +37,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: theme.fonts.medium,
   },
+  logo: {
+    width: 130,
+    height: 50,
+  },
   image: {
-    width: 180,
-    height: 80,
-    opacity: 0.3,
+    marginBottom: 30,
+    width: 150,
+    height: 150,
   },
 });
 export default styles;
