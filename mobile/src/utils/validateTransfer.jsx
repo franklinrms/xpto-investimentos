@@ -4,7 +4,7 @@ const validateWithdraw = (balance, value) => {
 };
 
 const validateValue = (value) => {
-  if (value === 'NaN') return false;
+  if (value === 'NaN' || value < 1) return false;
   return true;
 };
 
