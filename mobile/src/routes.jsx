@@ -7,13 +7,14 @@ import Wallet from './pages/Wallet';
 import AllStocks from './pages/AllStocks';
 import StockDetails from './pages/StockDetails';
 import Profile from './pages/Profile';
+import Registration from './pages/Registration';
 
 const Stack = createNativeStackNavigator();
 
 function Routes() {
   return (
     <Stack.Navigator
-      initialRouteName="Wallet"
+      initialRouteName="Login"
       screenOptions={{
         headerShown: false,
       }}
@@ -24,6 +25,7 @@ function Routes() {
       <Stack.Screen name="AllStocks" component={AllStocks} />
       <Stack.Screen name="StockDetails" component={StockDetails} />
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Registration" component={Registration} />
     </Stack.Navigator>
   );
 }
