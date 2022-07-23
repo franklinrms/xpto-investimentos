@@ -5,8 +5,8 @@ import UserContext from './UserContext';
 export default function UserProvider({ children }) {
   const [user, setUser] = useState({});
   const [balance, setBalance] = useState(0);
-  const [transferSent, setTransferSent] = useState(false);
   const [myStocks, setMyStocks] = useState([]);
+  const [transferSent, setTransferSent] = useState(false);
 
   const balanceUpdate = (value) => {
     const result = Number(value).toFixed(2);

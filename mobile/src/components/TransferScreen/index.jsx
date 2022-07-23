@@ -6,6 +6,7 @@ import UserContext from '../../context/UserContext';
 import theme from '../../theme';
 import newTransfer from '../../utils/newTransfer';
 import transferType from '../../utils/transferType';
+import updateDataStore from '../../utils/updateDataStore';
 import validateTransfer from '../../utils/validateTransfer';
 import TransferOption from '../TransferOption';
 
@@ -14,16 +15,19 @@ import styles from './styles';
 export default function TransferScreen() {
   const [inputValue, setInputValue] = useState(0);
   const [selectedId, setSelectedId] = useState('deposit');
-  const { balance, balanceUpdate, setTransferSent } = useContext(UserContext);
+  const {
+    balance, balanceUpdate, setTransferSent, user, myStocks,
+  } = useContext(UserContext);
 
   const handleChange = (e) => {
     const value = Number(e).toFixed(2);
     setInputValue(value);
   };
 
-  const sendTransfer = () => {
+  const sendTransfer = async () => {
     if (validateTransfer(selectedId, balance, inputValue)) {
       balanceUpdate(newTransfer(selectedId, balance, inputValue));
+      await updateDataStore(user, newTransfer(selectedId, balance, inputValue), myStocks);
       setTransferSent(true);
     } else {
       Alert.alert('Falha', 'valor inválido ou saldo insuficiente');

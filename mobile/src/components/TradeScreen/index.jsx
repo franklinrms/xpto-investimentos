@@ -10,6 +10,7 @@ import validateTrade from '../../utils/validateTrade';
 import TransferOption from '../TransferOption';
 
 import styles from './styles';
+import updateDataStore from '../../utils/updateDataStore';
 
 export default function TradeScreen({
   stockId, price, name, amountOwned,
@@ -18,7 +19,7 @@ export default function TradeScreen({
   const [orderTotal, setOrderTotal] = useState(0);
   const [selectedId, setSelectedId] = useState(null);
   const {
-    balance, balanceUpdate, setTransferSent, myStocks, setMyStocks,
+    balance, balanceUpdate, setTransferSent, myStocks, setMyStocks, user,
   } = useContext(UserContext);
   const backgroundColor = selectedId === 'Vender' ? theme.colors.sell : theme.colors.brand;
 
@@ -67,15 +68,17 @@ export default function TradeScreen({
   const newTrade = () => {
     if (selectedId === 'Comprar') {
       buy();
+      balanceUpdate(balance - orderTotal);
       return Number(balance) - Number(orderTotal);
     }
     sell();
+    balanceUpdate(balance - orderTotal);
     return Number(balance) + Number(orderTotal);
   };
 
-  const sendOrder = () => {
+  const sendOrder = async () => {
     if (validateTrade(selectedId, balance, orderTotal, inputAmount, amountOwned)) {
-      balanceUpdate(newTrade().toFixed(2));
+      await updateDataStore(user, newTrade(), myStocks);
       setTransferSent(true);
     } else {
       Alert.alert('Falha', 'valor inválido ou saldo insuficiente');
