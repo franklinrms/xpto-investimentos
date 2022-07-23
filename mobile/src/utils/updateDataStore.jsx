@@ -11,5 +11,4 @@ export default async function updateDataStore(user, balance, myStocks) {
   const UPDATED_DATA = JSON.stringify(data);
 
   await AsyncStorage.setItem('USER_DATA', UPDATED_DATA);
-  console.log('🚀 ~ data', data[userIndex]);
 }
