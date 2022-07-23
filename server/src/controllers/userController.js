@@ -14,7 +14,7 @@ const login = async (req, res) => {
         return res.status(404).json({message: "email ou senha inválidos"});
     }
 
-    return res.status(200).json(user);
+    return res.status(200).json(user[0]);
 };
 
 const updateUserData = async (req, res) => {
