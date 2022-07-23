@@ -26,8 +26,15 @@ const getUser = async (email, password) => {
     });
     return user
 } 
+const updateUser = async (id, balance, portfolio) => {
+    await prisma.user.update({
+        where: { id: id },
+        data: { balance, portfolio },
+    });
+} 
 
 module.exports = { 
     newUser,
     getUser,
+    updateUser,
 }
