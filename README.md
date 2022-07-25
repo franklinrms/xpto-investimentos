@@ -1,4 +1,5 @@
-<h1 align="center">XPTO Investimentos</h1>
+![Cover](./.github/cover.png)
+
 Aplicativo de investimento em ações, com algumas funcionalidades de conta digital.
 
 ## Técnologias usadas
@@ -18,6 +19,18 @@ Aplicativo de investimento em ações, com algumas funcionalidades de conta digi
 - [x] Tela de detalhes de ação.
 - [x] Tela de negociação de ações.
 - [x] Armazenamento local de dados do usuário.
+
+<div style="display:flex;justify-content:space-around;">
+  <img src="./.github/frame-01.png" height="500px"/>
+  <img src="./.github/frame-02.png" height="500px"/>
+  <img src="./.github/frame-05.png" height="500px"/>
+  <img src="./.github/frame-03.png" height="500px"/>
+  <img src="./.github/frame-04.png" height="500px"/>
+  <img src="./.github/frame-06.png" height="500px"/>
+  <img src="./.github/frame-07.png" height="500px"/>
+  <img src="./.github/frame-09.png" height="500px"/>
+  <img src="./.github/frame-08.png" height="500px"/>
+</div>
 
 ## Executando aplicação
 
